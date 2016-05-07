@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.longfeng.core.mapper.AuthMapper" >
+  <resultMap id="BaseResultMap" type="com.longfeng.core.entity.Auth" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="p_id" property="pId" jdbcType="INTEGER" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="rank" property="rank" jdbcType="INTEGER" />
+    <result column="image_path" property="imagePath" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lib_auth
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.longfeng.core.entity.Auth" >
+    insert into lib_auth (id, name, p_id, 
+      url, path, rank, image_path
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pId,jdbcType=INTEGER}, 
+      #{url,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, #{rank,jdbcType=INTEGER}, #{imagePath,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.longfeng.core.entity.Auth" >
+    update lib_auth
+    set name = #{name,jdbcType=VARCHAR},
+      p_id = #{pId,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      rank = #{rank,jdbcType=INTEGER},
+      image_path = #{imagePath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, name, p_id, url, path, rank, image_path
+    from lib_auth
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, name, p_id, url, path, rank, image_path
+    from lib_auth
+  </select>
+</mapper>
