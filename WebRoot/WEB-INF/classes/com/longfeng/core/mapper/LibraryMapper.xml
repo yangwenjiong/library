@@ -10,6 +10,7 @@
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="createDate" property="createdate" jdbcType="DATE" />
+    <result column="flag" property="flag" jdbcType="INTEGER" />
     <result column="introduce" property="introduce" jdbcType="LONGVARCHAR" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
@@ -19,12 +20,12 @@
   <insert id="insert" parameterType="com.longfeng.core.entity.Library" >
     insert into lib_library (id, libraryname, curator, 
       tel, address, email, 
-      url, createDate, introduce
-      )
+      url, createDate, flag, 
+      introduce)
     values (#{id,jdbcType=INTEGER}, #{libraryname,jdbcType=VARCHAR}, #{curator,jdbcType=VARCHAR}, 
       #{tel,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{createdate,jdbcType=DATE}, #{introduce,jdbcType=LONGVARCHAR}
-      )
+      #{url,jdbcType=VARCHAR}, #{createdate,jdbcType=DATE}, #{flag,jdbcType=INTEGER}, 
+      #{introduce,jdbcType=LONGVARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.longfeng.core.entity.Library" >
     update lib_library
@@ -35,16 +36,17 @@
       email = #{email,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
       createDate = #{createdate,jdbcType=DATE},
+      flag = #{flag,jdbcType=INTEGER},
       introduce = #{introduce,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select id, libraryname, curator, tel, address, email, url, createDate, introduce
+    select id, libraryname, curator, tel, address, email, url, createDate, flag, introduce
     from lib_library
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
-    select id, libraryname, curator, tel, address, email, url, createDate, introduce
+    select id, libraryname, curator, tel, address, email, url, createDate, flag, introduce
     from lib_library
   </select>
 </mapper>

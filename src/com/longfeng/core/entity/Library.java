@@ -19,6 +19,8 @@ public class Library {
 
     private Date createdate;
 
+    private Integer flag;
+
     private String introduce;
 
     public Integer getId() {
@@ -83,6 +85,14 @@ public class Library {
 
     public void setCreatedate(Date createdate) {
         this.createdate = createdate;
+    }
+
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
     }
 
     public String getIntroduce() {

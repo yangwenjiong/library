@@ -4,13 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<!--<typeAliases> -->
-	<!--<typeAlias alias="goods" type="com.coocaa.core.entity.Goods"/> -->
-	<!--</typeAliases> -->
+        <!--<typeAliases>-->
+                <!--<typeAlias alias="goods" type="com.coocaa.core.entity.Goods"/>-->
+        <!--</typeAliases>-->
 
-	<!--<mappers> -->
-	<!--<mapper resource="com/coocaa/mall/goods/GoodsMapper.xml"/> -->
+        <!--<mappers>-->
+                <!--<mapper resource="com/coocaa/mall/goods/GoodsMapper.xml"/>-->
 
-	<!--</mappers> -->
+        <!--</mappers>-->
 
 </configuration>
