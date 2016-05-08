@@ -69,7 +69,8 @@
       </nav>
       
       <!-- right -->
-      <iframe name="right" src="${pageContext.request.contextPath }/welcome/welcomePage.lf" width="100%" height="100%" /></iframe>
+      <!--<iframe name="right" src="${pageContext.request.contextPath }/welcome/welcomePage.lf" width="100%" height="100%" /></iframe>  -->
+      <iframe name="right" src="${pageContext.request.contextPath }/auth/list.lf" width="100%" height="100%" /></iframe>
       
     </div><!-- /#wrapper -->
 

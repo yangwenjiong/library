@@ -41,4 +41,7 @@
     select id, name, p_id, url, path, rank, image_path
     from lib_auth
   </select>
+  <select id="selectAllBySort" resultMap="BaseResultMap" >
+  	select * from lib_auth order by path;
+  </select>
 </mapper>

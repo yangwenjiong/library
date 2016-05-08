@@ -13,4 +13,6 @@ public interface AuthMapper {
     List<Auth> selectAll();
 
     int updateByPrimaryKey(Auth record);
+    
+    List<Auth> selectAllBySort();
 }

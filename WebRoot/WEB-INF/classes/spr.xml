@@ -79,4 +79,5 @@
     <aop:config>
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* *com.longfeng..service..*.*(..))"/>
     </aop:config>
+    
 </beans>
